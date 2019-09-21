@@ -23,4 +23,27 @@ export class ProdutosService {
       })
     )
   }
+
+  getCategoriasAll(){
+    return this.db.list(FirebasePath.CATEGORIAS)
+    .snapshotChanges().pipe(
+      map( changes => {
+        return changes.map(m => ({key: m.payload.key, ...m.payload.val() }));
+      }
+        )
+    )
+  }
+
+  // //Busca produto por key
+  getByKey(key: string){
+
+      //'produtos'+'-KEY FIREBASE'
+      // path = 'produtos'/-KEY FIREBASE'
+    const path = '${FirebasePath.PRODUTOS}${key}';
+    return this.db.object(path).snapshotChanges().pipe(
+      map(change => {
+        return ({key: change.key, ...change.payload.val() });
+      })
+    )
+  }
 }
