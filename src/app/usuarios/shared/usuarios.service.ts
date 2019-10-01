@@ -58,12 +58,13 @@ export class UsuariosService {
   }
 
   getDadosUsuario(){
-    const user = { name:'', email:''};
-    if (this.afAuth.auth.currentUser){
-      user.name=this.afAuth.auth.currentUser.displayName;
-      user.email=this.afAuth.auth.currentUser.email;
-      }
-      return user;
+    const user = { name: '', email: ''};
+    if (this.afAuth.auth.currentUser) {
+      user.name = this.afAuth.auth.currentUser.displayName;
+      user.email = this.afAuth.auth.currentUser.email;
+    }
+
+    return user;
   }
 
   handlerError(error: any) {

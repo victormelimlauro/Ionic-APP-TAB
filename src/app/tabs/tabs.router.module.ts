@@ -7,12 +7,12 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      { 
+      {
         path: 'produtos',
         children: [
           {
             path: '',
-            loadChildren:'../produtos/lista-produtos/lista-produtos.module#ListaProdutosPageModule'
+            loadChildren: '../produtos/lista-produtos/lista-produtos.module#ListaProdutosPageModule'
           }
         ]
       },
@@ -48,18 +48,26 @@ const routes: Routes = [
       {
         path: 'enderecos',
         loadChildren: '../enderecos/lista-endereco/lista-endereco.module#ListaEnderecoPageModule'
+      },
+      {
+        path: 'enderecos/novo',
+        loadChildren: '../enderecos/form-endereco/form-endereco.module#FormEnderecoPageModule'
       }
     ]
-  },
+  },  
   {
     path: 'pedido',
     children: [
       {
         path: 'carrinho/novo-item/:key',
         loadChildren: '../pedidos/form-item-pedido/form-item-pedido.module#FormItemPedidoPageModule'
+      },
+      {
+        path: 'carrinho',
+        loadChildren: '../pedidos/lista-item-pedido/lista-item-pedido.module#ListaItemPedidoPageModule'
       }
     ]
-  },
+  },    
   {
     path: '',
     redirectTo: '/tabs/produtos',

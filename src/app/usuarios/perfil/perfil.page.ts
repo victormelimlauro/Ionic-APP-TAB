@@ -1,5 +1,5 @@
-import { UsuariosService } from './../shared/usuarios.service';
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from '../shared/usuarios.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-user : any = { };
-  constructor(private usuariosService : UsuariosService,
-              private router : Router) { }
+user: any = {};
+
+  constructor(private usuariosService: UsuariosService,
+              private router: Router) { }
 
   ngOnInit() {
     this.user = this.usuariosService.getDadosUsuario();
@@ -22,5 +23,6 @@ user : any = { };
       this.router.navigate(['/login']);
     })
   }
+  
 
 }
