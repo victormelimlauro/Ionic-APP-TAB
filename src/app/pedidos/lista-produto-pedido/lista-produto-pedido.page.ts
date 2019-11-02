@@ -7,12 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaProdutoPedidoPage implements OnInit {
 
-
-constructor() { }
+  constructor() { }
 
   ngOnInit() {
-
   }
-
 
 }

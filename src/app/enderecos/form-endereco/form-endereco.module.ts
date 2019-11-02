@@ -1,11 +1,10 @@
-import { SharedModule } from './../../core/shared/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FormEnderecoPage } from './form-endereco.page';
-import { from } from 'rxjs';
+import { SharedModule } from 'src/app/core/shared/shared/shared.module';
 
 const routes: Routes = [
   {

@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let item of itemPedido | async">
+    <ion-item *ngFor="let item of itensPedido | async">
       <ion-label text-wrap>
         <h1>{{ item.produtoNome }}</h1>
         <pre *ngIf="item.produtoDescricao" text-wrap>{{ item.produtoDescricao }}</pre>
